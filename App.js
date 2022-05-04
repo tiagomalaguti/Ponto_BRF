@@ -1,5 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Image, TextInput, Button } from "react-native";
 
 export default function App() {
   return (
@@ -11,12 +11,25 @@ export default function App() {
         />
       </View>
       <View>
+        <Text>Carga Horaria</Text>
+      </View>
+      <View style={styles.container3}>
+        <TextInput style={styles.input} keyboardType="numeric"></TextInput>
+        <Text style={styles.te}>:</Text>
+        <TextInput style={styles.input} keyboardType="numeric"></TextInput>
+      </View>
+      <View>
         <Text>Hora entrada</Text>
       </View>
       <View style={styles.container3}>
         <TextInput style={styles.input} keyboardType="numeric"></TextInput>
         <Text style={styles.te}>:</Text>
         <TextInput style={styles.input} keyboardType="numeric"></TextInput>
+      </View>
+      <View style={styles.container2}>
+        <Button title="Limpar"></Button>
+        <Button title="calcular"></Button>
+        <Button title="Dobrada"></Button>
       </View>
     </View>
   );
@@ -28,6 +41,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  container2: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
+    marginTop: "10%",
   },
   tinyLogo: {
     width: 200,
@@ -42,6 +61,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     height: "100%",
     width: "40%",
+    textAlign: "center",
   },
   text: {},
 });
